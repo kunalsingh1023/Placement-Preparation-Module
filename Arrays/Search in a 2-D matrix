@@ -1,0 +1,30 @@
+class Solution {
+public:
+    bool binary(vector<int> &arr,int t)
+    {
+        // for(int i=0;i<a.size();i++)
+        // {
+        //     if(a[i]==t)
+        //         return true;
+        // }
+        // return false;
+        
+        if(binary_search(arr.begin(), arr.end(), t))
+            return true;
+        else
+            return false;
+     
+    }
+    
+    
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        for(int i=0;i<matrix.size();i++)
+        {
+            bool k=binary(matrix[i],target);
+        if(k==true)
+            return true;
+        }
+        
+    return false;
+    }
+};
