@@ -1,0 +1,31 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        vector<vector<int>> abc;
+    
+        if(intervals.size()==0)
+            return abc;
+        
+        sort(intervals.begin(),intervals.end());
+        
+        
+        vector<int> current=intervals[0];
+        for(int i=1;i<intervals.size();i++)
+        {
+            if(current[1]<intervals[i][0])
+            {
+                abc.push_back(current);
+                current=intervals[i];
+            }
+            else
+            {
+                current[1]=max(current[1],intervals[i][1]);
+            }
+            
+        }
+                
+        abc.push_back(current);
+        return abc;
+        
+    }
+};
