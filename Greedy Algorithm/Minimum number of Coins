@@ -33,7 +33,8 @@ int main()
     for(int i=0;i<m;i++)
     cin>>coins[i];
     
-    int V = 11;
+    int V;
+    cin >> V;
     cout << "Minimum coins required is "
          << minCoins(coins, m, V);
     return 0;
